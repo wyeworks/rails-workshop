@@ -9,8 +9,12 @@
   </head>
 
   <body>
-    <%= render 'header' %>
+    <nav class="navbar navbar-default">
+      <%= render 'header' %>
+    </nav>
 
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="col-md-8 col-md-offset-2"><%= yield %></div>
+    </div>
   </body>
 </html>
