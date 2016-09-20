@@ -20,7 +20,7 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
       post accounts_url, params: { account: { balance: @account.balance, currency: @account.currency, kind: @account.kind, name: @account.name } }
     end
 
-    assert_redirected_to account_url(Account.last)
+    assert_redirected_to accounts_url
   end
 
   test "should show account" do
@@ -35,7 +35,7 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update account" do
     patch account_url(@account), params: { account: { balance: @account.balance, currency: @account.currency, kind: @account.kind, name: @account.name } }
-    assert_redirected_to account_url(@account)
+    assert_redirected_to accounts_url
   end
 
   test "should destroy account" do
