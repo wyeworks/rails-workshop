@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :kind %>
-    <%= f.text_field :kind %>
+    <%= f.select :kind, account_kind_options %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :currency %>
-    <%= f.text_field :currency %>
+    <%= f.select :currency, currency_options %>
   </div>
 
   <div class="actions">
