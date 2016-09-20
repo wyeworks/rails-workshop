@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
   </div>
 
   <div class="field">
@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :balance %>
-    <%= f.text_field :balance %>
+    <%= f.number_field :balance, required: true %>
   </div>
 
   <div class="field">
