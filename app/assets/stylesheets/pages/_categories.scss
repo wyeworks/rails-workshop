@@ -1,0 +1,13 @@
+.listing {
+  .favorite-icon {
+    color: $brand-danger;
+  }
+}
+
+@media (max-width: #{$mobile-breakpoint}) {
+  form {
+    .btn-category-type label {
+      font-size: 0.65em;
+    }
+  }
+}

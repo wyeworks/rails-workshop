@@ -1,0 +1,17 @@
+.list-group-item--title {
+  font-weight: bold;
+  color: $gray-dark;
+  background-color: $gray-lighter;
+  border-color: $gray-light;
+
+  &.active {
+    color: rgb(255, 255, 255);
+    background-color: $component-active-bg;
+    border-color: $component-active-bg;
+    pointer-events: none;
+
+    &:hover {
+      background-color: darken($component-active-bg, 15%);
+    }
+  }
+}

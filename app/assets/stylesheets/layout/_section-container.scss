@@ -1,0 +1,11 @@
+@media (min-width: #{$mobile-breakpoint}) {
+  .section-container {
+    margin-left: 23em;
+  }
+}
+
+.section-container {
+  .section-container--header {
+    line-height: 5em;
+  }
+}

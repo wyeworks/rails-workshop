@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------------------
+// This file contains all re-declarations related to Bootstrap-select styles.
+// -----------------------------------------------------------------------------
+
+.dropdown-menu > li {
+  a:hover, a:focus {
+    color: $pager-active-color;
+    background-color: $brand-primary;
+  }
+}

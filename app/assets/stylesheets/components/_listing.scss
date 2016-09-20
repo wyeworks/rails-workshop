@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.listing {
+  tbody > tr > td {
+    line-height: 2em;
+  }
+}
+
+.listing__icon {
+  width: 1em;
+}
+
+.listing__amount--income {
+  color: $brand-success;
+}
+
+.listing__amount--expense {
+  color: $brand-primary;
+}
+
+.listing__amount--active {
+  color: $pager-active-color;;
+}

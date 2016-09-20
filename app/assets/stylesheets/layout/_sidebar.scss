@@ -1,0 +1,15 @@
+.sidebar {
+  padding-top: 1em;
+
+  @media (min-width: #{$mobile-breakpoint}) {
+    z-index: 1;
+    position: absolute;
+    width: 21em;
+    margin-top: 2em;
+    padding: 0 1em 0;
+  }
+
+  .active {
+    pointer-events: none;
+  }
+}

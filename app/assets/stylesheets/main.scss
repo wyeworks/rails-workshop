@@ -1,0 +1,40 @@
+@charset 'UTF-8';
+
+// Configuration and helpers
+@import
+  'abstracts/variables';
+
+// Vendors
+@import
+  'vendor/stylesheets';
+
+// Vendor extensions
+@import
+  'vendors-extensions/bootstrap',
+  'vendors-extensions/bootstrap-select';
+
+// Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// Layout-related sections
+@import
+  'layout/grid',
+  'layout/section-container',
+  'layout/sidebar',
+  'layout/footer';
+
+// Components
+@import
+  'components/dropdown-select',
+  'components/fa',
+  'components/list-group-item',
+  'components/listing';
+
+// Page-specific styles
+@import
+  'pages/devise',
+  'pages/categories';
