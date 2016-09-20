@@ -1,7 +1,7 @@
 <tr>
   <td><%= account.name %></td>
   <td><%= account.kind %></td>
-  <td><%= account.balance %></td>
+  <td><%= formatted_currency(account.balance, account.currency) %></td>
   <td>
     <%= link_to 'Edit', edit_account_path(account), class: 'btn btn-default btn-sm' %>
     <%= link_to 'Delete',
