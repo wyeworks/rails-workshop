@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  kind: MyString
-  balance: 
-  currency: MyString
+  name: Bank account
+  kind: bank
+  balance: 100
+  currency: UYU
 
 two:
-  name: MyString
-  kind: MyString
-  balance: 
-  currency: MyString
+  name: Cash account
+  kind: cash
+  balance: 20.5
+  currency: USD
