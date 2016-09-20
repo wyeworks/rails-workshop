@@ -10,20 +10,26 @@
   <div class="col-md-12">
     <div class="listing">
       <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Account type</th>
-              <th>Balance</th>
-              <th class="col-md-2 col-xs-4"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <%= render @accounts %>
-          </tbody>
-        </table>
-      </div>
+      <% if @accounts.any? %>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Account type</th>
+                <th>Balance</th>
+                <th class="col-md-2 col-xs-4"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @accounts %>
+            </tbody>
+          </table>
+        </div>
+      <% else %>
+        <div class="alert alert-info" role="alert">
+          <strong>Heads up!</strong> Click on the New Account button to add your first account
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
