@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class CreateAccountTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   test 'can create an account' do
+    sign_in users(:one)
+
     get '/accounts/new'
     assert_response :success
 
