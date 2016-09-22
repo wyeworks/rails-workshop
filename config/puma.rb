@@ -45,3 +45,18 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+
+if get(:environment) == "production"
+  workers ENV.fetch("WEB_CONCURRENCY") { 2 }
+
+  daemonize
+
+  app_dir = File.expand_path("../..", __FILE__)
+
+  # Set master PID and state locations
+  pidfile "#{app_dir}/server/puma.pid"
+  state_path "#{app_dir}/server/puma.state"
+
+  # Set up socket location
+  bind "unix://#{app_dir}/server/puma.sock"
+end
