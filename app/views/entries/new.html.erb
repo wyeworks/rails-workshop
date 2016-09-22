@@ -1,10 +1,10 @@
 <div class="section-container--header row">
   <div class="col-md-10 col-xs-8">
-    <h2>Create Transaction in <em><%= @account.name %></em></h2>
+    <h2>Create Entry in <em><%= @account.name %></em></h2>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
-    <%= render 'form' %>
+    <%= render 'form', entry: @entry, account: @account %>
   </div>
 </div>

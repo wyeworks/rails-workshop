@@ -1,69 +1,38 @@
-<%= form_for([@account, @entry], remote: true) do |f| %>
+<%= form_for([account, entry]) do |f| %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <% @entry.errors.full_messages.each do |message| %>
+      <% entry.errors.full_messages.each do |message| %>
         <div class="alert alert-danger"><%= message %></div>
       <% end %>
 
-      <%= f.fields_for :entry_transaction do |_f| %>
       <div class="form-group">
-        <%= _f.label :transaction_type %>
-        <div id="transaction_type_buttons" class="input-group">
-          <div class="btn-group btn-group-justified" data-toggle="buttons">
-            <%= transaction_types_radio_buttons(_f, _f.object) %>
-          </div>
-        </div>
-      </div>
-      <% end %>
-
-      <div class="form-group <%= 'hidden' unless @entry.transfer? %>">
-        <%= label_tag 'counterpart_account_id', counterpart_account_label(@entry) %>
-        <%= select_tag 'counterpart_account_id', accounts_options(@account),
-          class: 'form-control selectpicker', data: { style: 'dropdown-select__button' } %>
+        <%= f.label :entry_type %>
+        <%= f.select :kind, entry_kind_options, {}, class: 'form-control' %>
       </div>
 
-      <%= f.fields_for :entry_transaction do |_f| %>
-        <div class="form-group <%= 'hidden' if @entry.transfer? %>">
-          <%= _f.label :category_id, for: 'category_id' %>
-          <%= _f.select :category_id,
-            categories_options,
-            { include_blank: 'No category' }, class: 'form-control selectpicker', id: 'category_id', data: { style: 'dropdown-select__button' } %>
-        </div>
-        <div class="form-group">
-          <%= _f.label :amount %>
-          <div class="row">
-            <div class="col-md-6 col-xs-6">
-              <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-usd fa--wide"></i></div>
-                <%= _f.number_field :amount, class: 'form-control', required: true, step: 0.01, min: 0 %>
-              </div>
-            </div>
-            <div class="col-md-6 col-xs-6">
-              <%= _f.label :amount_currency, class: 'sr-only' %>
-              <%= _f.select :amount_currency, currencies_options, {},
-                class: 'form-control selectpicker', data: { style: 'dropdown-select__button' } %>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= _f.label :date %>
-          <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-calendar fa--wide"></i></div>
-            <%= _f.date_field :date, class: 'form-control', required: true %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= _f.label :notes %>
-          <div class="input-group">
-            <%= _f.text_area :notes, class: 'form-control', rows: 3, cols: 120 %>
-          </div>
-        </div>
-      <% end %>
+      <div class="form-group">
+        <%= f.label :category %>
+        <%= f.text_field :category, class: 'form-control'%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :amount, "Amount (in #{account.currency})" %>
+        <%= f.number_field :amount, class: 'form-control', required: true, step: 0.01, min: 0 %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :date %>
+        <%= f.date_field :date, class: 'form-control', required: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :note %>
+        <%= f.text_area :note, class: 'form-control', rows: 3 %>
     </div>
 
     <div class="panel-footer text-right">
-      <%= link_to 'Cancel', account_entries_path(@account), class: 'btn btn-default' %>
-      <%= f.submit submit_button_label(@entry), class: 'btn btn-primary' %>
+      <%= link_to 'Cancel', account_entries_path(account), class: 'btn btn-default' %>
+      <%= f.submit class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>
