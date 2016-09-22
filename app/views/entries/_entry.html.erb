@@ -1,0 +1,14 @@
+<tr>
+  <td><%= entry.date.strftime("%m-%d-%Y") %></td>
+  <td><%= entry.category %></td>
+  <td><%= formatted_currency(entry.amount, @account.currency) %></td>
+  <td>
+    <%= link_to 'Edit', edit_account_entry_path(@account, entry), class: 'btn btn-default btn-sm', role: 'button' %>
+    <%= link_to 'Delete',
+                [@account, entry],
+                method: :delete,
+                class: 'btn btn-danger btn-sm',
+                role: 'button',
+                data: { confirm: 'Are you sure you want to delete this transaction?' } %>
+  </td>
+</tr>

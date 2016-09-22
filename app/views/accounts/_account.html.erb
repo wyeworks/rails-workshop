@@ -3,6 +3,9 @@
   <td><%= account.kind %></td>
   <td><%= formatted_currency(account.balance, account.currency) %></td>
   <td>
+    <%= link_to 'Entries', account_entries_path(account), class: 'btn btn-default btn-sm', role: 'button' %>
+  </td>
+  <td>
     <%= link_to 'Edit', edit_account_path(account), class: 'btn btn-default btn-sm' %>
     <%= link_to 'Delete',
                 account,
