@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AccountsHelperTest < ActionView::TestCase
+class ApplicationHelperTest < ActionView::TestCase
   test "should render the USD currency and a positive value as income" do
     assert_dom_equal '<span class="listing__amount--income">USD 45.10</span>', formatted_currency(45.1, 'USD')
   end
