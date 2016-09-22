@@ -5,5 +5,5 @@ class Account < ApplicationRecord
   validates :currency, inclusion: { in: %w(USD UYU ARS) }
 
   belongs_to :user
-  has_many :entries
+  has_many :entries, dependent: :destroy
 end
