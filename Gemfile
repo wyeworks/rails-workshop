@@ -55,6 +55,7 @@ group :development do
   gem 'capistrano3-puma',        require: false
   gem 'capistrano-postgresql',   require: false
   gem 'capistrano-linked-files', require: false
+  gem 'net-ssh', '3.2.1.beta1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
