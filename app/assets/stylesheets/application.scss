@@ -1,0 +1,206 @@
+
+$mobile-breakpoint: 768px;
+$footer-bg: #f5f5f5;
+
+// Bootstrap variables overrides
+
+$gray-dark: rgb(68, 68, 68);
+$gray: rgb(119, 119, 119);
+$gray-light: rgb(128, 128, 128);
+$gray-lighter: rgb(221, 221, 221);
+$brand-primary: rgb(217, 35, 15);
+$brand-success: rgb(70, 148, 8);
+$brand-info: rgb(2, 154, 207);
+$brand-warning: rgb(155, 71, 159);
+$brand-danger: rgb(217, 131, 31);
+$body-bg: rgb(252, 252, 252);
+$font-family-sans-serif: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+$font-size-base: 14px;
+$headings-font-family: $font-family-sans-serif;
+$headings-font-weight: 300;
+$padding-base-vertical: 8px;
+$padding-large-vertical: 14px;
+$btn-default-color: rgb(0, 0, 0);
+$btn-default-bg: rgb(246, 251, 251);
+$btn-default-border: darken($btn-default-bg, 15%);
+$input-border: rgb(221, 221, 221);
+$input-color-placeholder: $gray-lighter;
+$dropdown-link-hover-color: rgb(255, 255, 255);
+$dropdown-link-active-color: rgb(255, 255, 255);
+$navbar-height: 40px;
+$navbar-default-color: $gray;
+$navbar-default-bg: lighten($brand-danger, 40%);
+$navbar-default-link-color: $gray;
+$navbar-default-link-hover-color: $brand-primary;
+$navbar-default-link-active-color: $navbar-default-link-hover-color;
+$navbar-default-link-active-bg: transparent;
+$navbar-default-link-disabled-color: rgb(68, 68, 68);
+$navbar-default-toggle-icon-bar-bg: rgb(204, 204, 204);
+$navbar-inverse-bg: $brand-primary;
+$navbar-inverse-link-active-bg: transparent;
+$navbar-inverse-link-disabled-color: rgb(204, 204, 204);
+$navbar-inverse-toggle-hover-bg: darken($navbar-inverse-bg, 10%);
+$navbar-inverse-toggle-border-color: darken($navbar-inverse-bg, 10%);
+$pagination-hover-color: rgb(255, 255, 255);
+$pagination-hover-border: $brand-primary;
+$pager-active-color: rgb(255, 255, 255);
+$state-success-text: rgb(70, 136, 71);
+$state-info-text: rgb(58, 135, 173);
+$state-warning-text: rgb(192, 152, 83);
+$state-danger-text: rgb(185, 74, 72);
+$modal-inner-padding: 20px;
+$panel-footer-bg: $gray-lighter;
+$panel-default-heading-bg: $panel-footer-bg;
+$panel-success-text: rgb(255, 255, 255);
+$panel-info-text: rgb(255, 255, 255);
+$panel-warning-text: rgb(255, 255, 255);
+$panel-danger-text: rgb(255, 255, 255);
+$well-bg: darken($body-bg, 3%);
+$breadcrumb-bg: transparent;
+
+@import
+  'bootstrap-sprockets',
+  'bootstrap';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 4.5em;
+}
+
+.dropdown-select__button {
+  background-color: $body-bg;
+  border-color: $input-border;
+}
+
+.fa--wide {
+  width: 1em;
+}
+
+.fa--bold {
+  font-weight: bold;
+}
+
+.fa--right-padding {
+  padding-right: 0.15em;
+}
+
+.list-group-item--title {
+  font-weight: bold;
+  color: $gray-dark;
+  background-color: $gray-lighter;
+  border-color: $gray-light;
+
+  &.active {
+    color: rgb(255, 255, 255);
+    background-color: $component-active-bg;
+    border-color: $component-active-bg;
+    pointer-events: none;
+
+    &:hover {
+      background-color: darken($component-active-bg, 15%);
+    }
+  }
+}
+
+.listing {
+  tbody > tr > td {
+    line-height: 2em;
+  }
+}
+
+.listing__icon {
+  width: 1em;
+}
+
+.listing__amount--income {
+  color: $brand-success;
+}
+
+.listing__amount--expense {
+  color: $brand-primary;
+}
+
+.listing__amount--active {
+  color: $pager-active-color;;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4em;
+  background-color: $footer-bg;
+  padding: 1.33em;
+  text-align: center;
+}
+
+.col--no-gutter {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+@media (min-width: #{$mobile-breakpoint}) {
+  .section-container {
+    margin-left: 23em;
+  }
+}
+
+.section-container {
+  .section-container--header {
+    line-height: 5em;
+  }
+}
+
+.sidebar {
+  padding-top: 1em;
+
+  @media (min-width: #{$mobile-breakpoint}) {
+    z-index: 1;
+    position: absolute;
+    width: 21em;
+    margin-top: 2em;
+    padding: 0 1em 0;
+  }
+
+  .active {
+    pointer-events: none;
+  }
+}
+
+.listing {
+  .favorite-icon {
+    color: $brand-danger;
+  }
+}
+
+@media (max-width: #{$mobile-breakpoint}) {
+  form {
+    .btn-category-type label {
+      font-size: 0.65em;
+    }
+  }
+}
+
+.devise-form-actions {
+  margin-top: 1.5em;
+
+  .btn.pull-right + .btn.pull-right {
+    margin-right: 0.4em;
+  }
+}
+
+.dropdown-menu > li {
+  a:hover, a:focus {
+    color: $pager-active-color;
+    background-color: $brand-primary;
+  }
+}
+
+.input-group .form-control {
+  z-index: auto;
+}
