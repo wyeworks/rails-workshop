@@ -1,0 +1,36 @@
+<div class="section-container--header row">
+  <div class="col-md-10 col-xs-8">
+    <h2><%= @account.name.titleize %></h2>
+  </div>
+  <div class="col-md-2 col-xs-4 col--no-gutter">
+    <%= link_to 'New Entry', new_account_entry_path(@account), class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="listing">
+      <% if @entries.any? %>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th class="col-md-2 col-xs-4"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @entries %>
+            </tbody>
+          </table>
+        </div>
+      <% else %>
+        <div class="alert alert-info" role="alert">
+          <strong>Heads up!</strong> Click on the New Entry button to add your first transaction
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
