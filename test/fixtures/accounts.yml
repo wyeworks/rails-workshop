@@ -5,9 +5,11 @@ one:
   kind: bank
   balance: 100
   currency: UYU
+  user: one
 
 two:
   name: Cash account
   kind: cash
   balance: 20.5
   currency: USD
+  user: two
