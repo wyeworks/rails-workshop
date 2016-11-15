@@ -1,0 +1,13 @@
+<tr>
+  <td><%= account.name %></td>
+  <td><%= account.kind %></td>
+  <td><%= account.balance %></td>
+  <td>
+    <%= link_to 'Edit', edit_account_path(account), class: 'btn btn-default btn-sm' %>
+    <%= link_to 'Delete',
+                account,
+                method: :delete,
+                class: 'btn btn-danger btn-sm',
+                data: { confirm: 'Are you sure you want to delete this account?' } %>
+  </td>
+</tr>
