@@ -1,5 +1,6 @@
 class Account < ApplicationRecord
   belongs_to :user
+  has_many   :entries, dependent: :destroy
 
   validates :name, presence: true
   validates :kind, inclusion: { in: %w(bank cash credit-card) }
