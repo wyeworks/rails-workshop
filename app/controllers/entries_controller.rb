@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :set_account
-  before_action :set_entry, only: [:edit, :update]
+  before_action :set_entry, only: [:edit, :update, :destroy]
 
   def index
     @entries = @account.entries
@@ -29,6 +29,11 @@ class EntriesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @entry.destroy
+    redirect_to account_entries_path(@account)
   end
 
   private
